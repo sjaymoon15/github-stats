@@ -17,20 +17,38 @@ class SearchBar extends Component {
 		this.props.fetchRepos(this.state.term);
 		this.setState({term: ''});
 	}
+	renderRepos(repo){
+		console.log(repo);
+		return (
+			<li key={repo.id}>{repo.full_name}</li>
+		);
+	}
 	render(){
 		return (
-			<form onSubmit={this.onFormSubmit} className='input-group'>
-				<input 
-					placeholder='Type your Github username'
-					className='form-control'
-					value={this.state.term}
-					onChange={this.onInputChange}
-					/>
-				<span className='input-group-btn'>
-					<button type='submit' className='btn btn-secondary'>Submit</button>
-				</span>
-			</form>
+			<div>
+				<form onSubmit={this.onFormSubmit} className='input-group'>
+					<input 
+						placeholder='Type your Github username'
+						className='form-control'
+						value={this.state.term}
+						onChange={this.onInputChange}
+						/>
+					<span className='input-group-btn'>
+						<button type='submit' className='btn btn-secondary'>Submit</button>
+					</span>
+				</form>
+				<ul className='list-group'>
+					{this.props.repos.map(this.renderRepos)}
+				</ul>
+			</div>
 		);
 	}
 }
-export default connect(null, {fetchRepos})(SearchBar);
+
+function mapStateToProps(state){
+	console.log('state',state);
+	return {
+		repos: state.repos.all
+	}
+}
+export default connect(mapStateToProps, {fetchRepos})(SearchBar);
