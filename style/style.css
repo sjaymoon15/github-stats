@@ -6,3 +6,25 @@
 	border-radius: 20px;
 	text-align: center;
 }
+form {
+	margin: 10px;
+}
+.user-info {
+	text-align: right;
+	padding: 5px;
+}
+.user-info img {
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+.btn-linkedin {
+	color: #fff;
+	background:#007bb6;
+}
+.btn-github {
+	color: #fff;
+	background:#444444
+}
+.user-info .btn {
+	margin: 5px;
+}

@@ -6,14 +6,13 @@ class RepoList extends Component {
 		console.log('repo', repo);
 		return (
 			<div className="each-box" key={repo.id}>
-        <img src="https://unsplash.it/200/300/?random" />
         <p>{repo.full_name}</p>
     	</div>
 		);
 	}
 	render(){
 		return (
-			<div>
+			<div className='col-md-9 list-group'>
         {this.props.repos.map(this.renderRepos)}
 			</div>
 		);

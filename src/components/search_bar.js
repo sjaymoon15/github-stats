@@ -40,8 +40,10 @@ class SearchBar extends Component {
 						<button type='submit' className='btn btn-secondary'>Submit</button>
 					</span>
 				</form>
-				<UserInfo />
-				<RepoList />
+				<div className='row'>
+					<UserInfo />
+					<RepoList />
+				</div>
 			</div>
 		)
 	}

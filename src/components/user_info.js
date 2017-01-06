@@ -6,9 +6,22 @@ class UserInfo extends Component {
 		if(!this.props.user){
 			return <div></div>;
 		}
+		const user = this.props.user;
 		return(
-			<div>
-				{this.props.user.name}
+			<div className='col-md-3 user-info'>
+				<img src={this.props.user.avatar_url} alt="user image" height="230" />
+				<h3>{user.name}</h3>
+				<h4>{user.login}</h4>
+				<a href={"mailto:"+user.email}>{user.email}</a>
+				<hr></hr>
+				<div>
+					<a href={"http://linkedin.com/in/"+ user.login} className="btn btn-social-icon btn-linkedin">
+				    <span className="fa fa-linkedin"></span>
+				  </a>
+				  <a href={"http://github.com/"+ user.login} className="btn btn-social-icon btn-github">
+				    <span className="fa fa-github"></span>
+				  </a>
+				</div>
 			</div>
 		);
 	}
