@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import DeploedRepos from './deployed_repos';
 
 class RepoList extends Component {
 	renderRepos(repo){
-		console.log('repo', repo);
 		return (
 			<div className="each-box" key={repo.id}>
         <p>{repo.full_name}</p>
@@ -11,16 +11,20 @@ class RepoList extends Component {
 		);
 	}
 	render(){
+		// deployed repos component -> each
+		// most commited repos?
+		// most current repos?
 		return (
 			<div className='col-md-9 list-group'>
+				<DeploedRepos allRepos={this.props.repos} />
         {this.props.repos.map(this.renderRepos)}
+
 			</div>
 		);
 	}
 }
 
 function mapStateToProps(state){
-	console.log('state',state);
 	return {
 		repos: state.repos.all
 	}

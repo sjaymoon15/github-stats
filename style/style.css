@@ -1,8 +1,6 @@
 .each-box {
 	background-color: yellow;
-	padding: 10px;
 	margin: 10px;
-	width: 250px;
 	border-radius: 20px;
 	text-align: center;
 }

@@ -9,7 +9,7 @@ class UserInfo extends Component {
 		const user = this.props.user;
 		return(
 			<div className='col-md-3 user-info'>
-				<img src={this.props.user.avatar_url} alt="user image" height="230" />
+				<img src={this.props.user.avatar_url} alt="user image" width="90%" />
 				<h3>{user.name}</h3>
 				<h4>{user.login}</h4>
 				<a href={"mailto:"+user.email}>{user.email}</a>
