@@ -1,14 +1,23 @@
 import React from 'react';
 
-const DeploedRepos = (props) => {
-	
-	console.log('props in deployedrepos comp', props);
-	//receives allRepos array of objects.
-	// const allRepos = props.allRepos;
-	// const deployedrepos = allRepos.filter(repo => repo.homepage);
-	// console.log(deployedrepos);
+const renderRepos = (repo) => {
 	return (
-		<div>deployed repos here</div>
+		<div key={repo.id}>
+			{repo.full_name}
+			<a href={repo.homepage}>{repo.homepage}</a>
+		</div>
+	)
+}
+
+const DeploedRepos = (props) => {
+
+	console.log('props in deployedrepos comp', props);
+	console.log('renderRepos',renderRepos);
+	return (
+		<div>
+			<h3>Deployed Repos</h3>
+			{props.deployedrepos.map(renderRepos)}
+		</div>
 	);
 }
 
