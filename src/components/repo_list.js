@@ -11,12 +11,15 @@ class RepoList extends Component {
 		);
 	}
 	render(){
+
+		const deployedrepos = this.props.repos.filter(repo => repo.homepage);
+		console.log(deployedrepos);
 		// deployed repos component -> each
 		// most commited repos?
 		// most current repos?
 		return (
 			<div className='col-md-9 list-group'>
-				<DeploedRepos allRepos={this.props.repos} />
+				<DeploedRepos deployedrepos={deployedrepos} />
         {this.props.repos.map(this.renderRepos)}
 
 			</div>
