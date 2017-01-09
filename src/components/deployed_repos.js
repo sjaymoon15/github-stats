@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Repo from './repo';
 
-const renderRepos = (repo) => {
-	return (
-		<div key={repo.id}>
-			{repo.full_name}
-			<a href={repo.homepage}>{repo.homepage}</a>
-		</div>
-	)
+export default class DeployedRepos extends Component{
+	renderRepos(repo){
+		return (
+			<div key={repo.id} className="col-md-4">
+				<Repo repo={repo} />
+			</div>
+		)
+	}
+	render(){	
+		return (
+			<div>
+				<h3>Deployed Repos</h3>
+				<div className='row'>
+					{this.props.deployedrepos.map(this.renderRepos)}
+				</div>
+			</div>
+		);
+	}
 }
 
-const DeploedRepos = (props) => {
-
-	console.log('props in deployedrepos comp', props);
-	console.log('renderRepos',renderRepos);
-	return (
-		<div>
-			<h3>Deployed Repos</h3>
-			{props.deployedrepos.map(renderRepos)}
-		</div>
-	);
-}
-
-export default DeploedRepos;
