@@ -4,10 +4,12 @@ import { Sparklines, SparklinesLine, SparklinesBars } from 'react-sparklines';
 const Graph = (props) => {
 	return (
 		<div>
-			<Sparklines data={props.data}>
-				<SparklinesLine color='orange' />
-			</Sparklines>
-			{props.totalCommits} total commits
+			<div className='graph'>
+				<Sparklines data={props.data}>
+					<SparklinesLine color='red' />
+				</Sparklines>
+			</div>
+			<div className="align-right">{props.totalCommits} total commits</div>
 		</div>
 	);
 }

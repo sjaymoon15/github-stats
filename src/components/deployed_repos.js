@@ -8,7 +8,7 @@ export default class DeployedRepos extends Component{
 	renderRepos(repo){
 		return (
 			<div key={repo.id} className="col-lg-4 col-md-6">
-				<div>
+				<div className='each-repo'>
 					<Repo repo={repo} />
 				</div>
 			</div>
@@ -17,7 +17,7 @@ export default class DeployedRepos extends Component{
 	render(){	
 		const deployedrepos = this.props.deployedrepos;
 		return (
-			<div>
+			<div className='each-list'>
 				<h4>Deployed Repos</h4>
 				<div className='row'>
 					{deployedrepos.map(this.renderRepos)}

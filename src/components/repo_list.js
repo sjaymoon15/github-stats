@@ -12,7 +12,7 @@ class RepoList extends Component {
 		// most commited repos?
 		// most current repos?
 		return (
-			<div className='col-md-9 list-group'>
+			<div className='col-md-9'>
 				<DeployedRepos deployedrepos={deployedrepos} />
 				<RecentRepos recentrepos={recentrepos} />
 			</div>

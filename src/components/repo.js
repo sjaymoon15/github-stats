@@ -47,7 +47,7 @@ export default class Repo extends Component {
 			<div>
 				<a href={repo.html_url} target="_blank">{this.state.repoTitle}</a>
 				{this.getSparklineData(this.state)}
-				{repo.homepage? <a href={repo.homepage} target="_blank">Web App link</a> : ''}
+				{repo.homepage? <div className="align-right"><a href={repo.homepage} target="_blank" >Web App link</a></div> : ''}
 			</div>
 		);
 	}
