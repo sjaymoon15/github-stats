@@ -7,6 +7,7 @@ const Graph = (props) => {
 			<Sparklines data={props.data}>
 				<SparklinesLine color='orange' />
 			</Sparklines>
+			{props.totalCommits} total commits
 		</div>
 	);
 }

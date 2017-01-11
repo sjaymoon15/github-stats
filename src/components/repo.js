@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchCommitActivity } from '../actions/index';
 import { Sparklines, SparklinesLine, SparklinesBars } from 'react-sparklines';
 import Graph from './sparklines';
 import axios from 'axios';
-
-
 
 export default class Repo extends Component {
 	constructor(props){
@@ -25,13 +21,17 @@ export default class Repo extends Component {
 	}
 	
 	getSparklineData(data){
-
 		let sparklinesData = [];
+		let totalCommits = 0;
 		this.state.activity.forEach((obj) => {
 			sparklinesData = sparklinesData.concat(obj.days); 
+			totalCommits += obj.total;
 		});
+
 		return (
-			<Graph data={sparklinesData} />
+			<div>
+				<Graph data={sparklinesData} totalCommits={totalCommits} />
+			</div>
 		);
 	}
 
@@ -42,16 +42,12 @@ export default class Repo extends Component {
 			);
 		}
 		const repo = this.props.repo;
-		const user = this.props.repo.owner.login;
-		const repoTitle = repo.full_name.split('/')[1];
-	
-		
+
 		return (
 			<div>
-				<a href={repo.html_url} target="_blank">{repoTitle}</a>
+				<a href={repo.html_url} target="_blank">{this.state.repoTitle}</a>
 				{this.getSparklineData(this.state)}
-				<div>Commit Activity</div>
-				<a href={repo.homepage} target="_blank">Web App link</a>
+				{repo.homepage? <a href={repo.homepage} target="_blank">Web App link</a> : ''}
 			</div>
 		);
 	}

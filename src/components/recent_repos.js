@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Repo from './repo';
 
 
-export default class DeployedRepos extends Component{
+export default class RecentRepos extends Component{
 
 	renderRepos(repo){
 		return (
@@ -15,12 +14,12 @@ export default class DeployedRepos extends Component{
 		)
 	}
 	render(){	
-		const deployedrepos = this.props.deployedrepos;
+		const recentrepos = this.props.recentrepos;
 		return (
 			<div>
-				<h4>Deployed Repos</h4>
+				<h4>Recent Repos</h4>
 				<div className='row'>
-					{deployedrepos.map(this.renderRepos)}
+					{recentrepos.map(this.renderRepos)}
 				</div>
 			</div>
 		);
