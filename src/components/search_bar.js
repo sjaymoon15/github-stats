@@ -6,7 +6,7 @@ import UserInfo from './user_info';
 
 class SearchBar extends Component {
 	// temporary automatic fetch
-	componentWillMount(){
+	componentDidMount(){
 		this.props.fetchRepos('sjaymoon15');
 		this.props.fetchUserInfo('sjaymoon15');
 	}

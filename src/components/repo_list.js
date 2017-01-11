@@ -3,17 +3,9 @@ import { connect } from 'react-redux';
 import DeployedRepos from './deployed_repos';
 
 class RepoList extends Component {
-	// renderRepos(repo){
-	// 	return (
-	// 		<div className="each-box" key={repo.id}>
- //        <p>{repo.full_name}</p>
- //    	</div>
-	// 	);
-	// }
 	render(){
 
 		const deployedrepos = this.props.repos.filter(repo => repo.homepage);
-		console.log(deployedrepos);
 		// deployed repos component -> each
 		// most commited repos?
 		// most current repos?
