@@ -6,7 +6,7 @@
 }
 .each-repo{
 	background-color: rgba(0, 0, 0, 0.1);
-	margin: 10px 0;
+	margin: 10px 1px;
 	padding: 10px;
 	border-radius: 10px;
 	
@@ -41,3 +41,15 @@ form {
 .graph{
 	margin: 5px;
 }
+.react-calendar-heatmap {
+	margin: 2% 7%;
+}
+.react-calendar-heatmap text{
+	font-size: 60%;
+}
+.react-calendar-heatmap .color-empty { fill: rgba(0, 0, 0, 0.1); }
+.react-calendar-heatmap .color-scale-1 { fill: #d6e685; }
+.react-calendar-heatmap .color-scale-2 { fill: #8cc665; }
+.react-calendar-heatmap .color-scale-3 { fill: #44a340; }
+.react-calendar-heatmap .color-scale-4 { fill: #1e6823; }
+

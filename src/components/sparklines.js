@@ -6,7 +6,7 @@ const Graph = (props) => {
 		<div>
 			<div className='graph'>
 				<Sparklines data={props.data}>
-					<SparklinesLine color='red' />
+					<SparklinesLine color='#1e6823' />
 				</Sparklines>
 			</div>
 			<div className="align-right">{props.totalCommits} total commits</div>

@@ -31,6 +31,7 @@
     "github-yearly-contributions": "^0.2.0",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
+    "react-calendar-heatmap": "^1.1.0",
     "react-dom": "^0.14.3",
     "react-masonry-component": "^5.0.0",
     "react-redux": "^4.0.0",

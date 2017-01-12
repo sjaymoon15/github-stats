@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DeployedRepos from './deployed_repos';
-import RecentRepos from './recent_repos.js';
+import RecentRepos from './recent_repos';
 
 class RepoList extends Component {
 	render(){

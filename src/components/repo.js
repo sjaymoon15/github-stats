@@ -22,7 +22,7 @@ export default class Repo extends Component {
 	
 	getSparklineData(data){
 		if(!this.state.activity){
-			return <div></div>
+			return (<div></div>);
 		}
 		let sparklinesData = [];
 		let totalCommits = 0;
@@ -51,7 +51,7 @@ export default class Repo extends Component {
 				<a href={repo.html_url} target="_blank">{this.state.repoTitle}</a>
 				{this.getSparklineData(this.state)}
 				<hr></hr>
-				{repo.description}
+				<small>{repo.description}</small>
 				{repo.homepage? <div className="align-right"><a href={repo.homepage} target="_blank" >Web App link</a></div> : ''}
 			</div>
 		);
