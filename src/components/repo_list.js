@@ -7,10 +7,9 @@ class RepoList extends Component {
 	render(){
 
 		const deployedrepos = this.props.repos.filter(repo => repo.homepage);
-		const recentrepos = this.props.repos.slice(0,4);
-		// deployed repos component -> each
-		// most commited repos?
-		// most current repos?
+		console.log(deployedrepos);
+		const recentrepos = this.props.repos.slice(0,10);
+		
 		return (
 			<div className='col-md-9'>
 				<DeployedRepos deployedrepos={deployedrepos} />

@@ -17,7 +17,7 @@ export default class RecentRepos extends Component{
 		const recentrepos = this.props.recentrepos;
 		return (
 			<div className='each-list'>
-				<h4>Recent Repos</h4>
+				<h4>Recently Updated Repos</h4>
 				<div className='row'>
 					{recentrepos.map(this.renderRepos)}
 				</div>
