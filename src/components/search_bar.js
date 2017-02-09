@@ -5,11 +5,11 @@ import RepoList from './repo_list';
 import UserInfo from './user_info';
 
 class SearchBar extends Component {
-	// temporary automatic fetch
-	componentDidMount(){
-		this.props.fetchRepos('sjaymoon15');
-		this.props.fetchUserInfo('sjaymoon15');
-	}
+	// // temporary automatic fetch
+	// componentDidMount(){
+	// 	this.props.fetchRepos('sjaymoon15');
+	// 	this.props.fetchUserInfo('sjaymoon15');
+	// }
 	constructor(props){
 		super(props);
 		this.state = { term: '' };

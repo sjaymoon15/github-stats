@@ -8,26 +8,27 @@ export default class Repo extends Component {
 		super(props);
 		this.state = { user: '', repoTitle: '', activity: [] };
 	}
-	componentDidMount(){
-		
+	componentWillMount(){
+
 		const user = this.props.repo.owner.login;
 		const repoTitle = this.props.repo.full_name.split('/')[1];
 		const ROOT_URL = 'https://api.github.com';
 		const url = `${ROOT_URL}/repos/${user}/${repoTitle}/stats/commit_activity`;
 		axios.get(url)
-		.then(({data}) => { 
+		.then(({data}) => {
 			this.setState({ user: user, repoTitle: repoTitle, activity: data });
 		});
 	}
-	
-	getSparklineData(data){
-		if(!this.state.activity){
+
+	getSparklineData(){
+		if(this.state.activity.length === 0){
 			return (<div></div>);
 		}
 		let sparklinesData = [];
 		let totalCommits = 0;
+		console.log(this.state.activity);
 		this.state.activity.forEach((obj) => {
-			sparklinesData = sparklinesData.concat(obj.days); 
+			sparklinesData = sparklinesData.concat(obj.days);
 			totalCommits += obj.total;
 		});
 
@@ -49,15 +50,11 @@ export default class Repo extends Component {
 		return (
 			<div>
 				<a href={repo.html_url} target="_blank">{this.state.repoTitle}</a>
-				{this.getSparklineData(this.state)}
+				{this.getSparklineData()}
 				<hr></hr>
-				<small>{repo.description}</small>
+				{repo.description}
 				{repo.homepage? <div className="align-right"><a href={repo.homepage} target="_blank" >Web App link</a></div> : ''}
 			</div>
 		);
 	}
 }
-
-
-
-

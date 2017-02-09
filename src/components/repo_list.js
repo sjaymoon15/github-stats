@@ -5,9 +5,12 @@ import RecentRepos from './recent_repos';
 
 class RepoList extends Component {
 	render(){
-
+		if(this.props.repos.length === 0){
+			return (
+				<div></div>
+			);
+		}
 		const deployedrepos = this.props.repos.filter(repo => repo.homepage);
-		console.log(deployedrepos);
 		const recentrepos = this.props.repos.slice(0,10);
 		
 		return (
